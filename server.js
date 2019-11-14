@@ -1,19 +1,13 @@
 const express = require('express')
 const PORT = process.env.PORT || 4000
+const AuthorRoutes = require('./routes/author.routes')
 
 const app = express()
 
-app.get('/status', (req, res) => {
-  res.json({
-    status: 'ok',
-    statusCode: 200,
-  })
+app.get('/', (req, res) => {
+  res.send({ message: 'Api del curso de Vuejs desde Cero' })
 })
 
-app.get('*', (req, res) => {
-  res.json({
-    message: 'Express on Unubo Cloud',
-  })
-})
+app.use('/author', AuthorRoutes)
 
 app.listen(PORT, () => console.log(`> Ready on http://localhost:${PORT}`))
