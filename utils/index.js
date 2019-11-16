@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const { secret } = require('../config')
 
 module.exports = {
-  encrypPassword: async () => {
+  encrypPassword: async (password) => {
     const salt = await bcrypt.genSalt(10)
     return bcrypt.hash(password, salt)
   },

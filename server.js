@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config()
 const cors = require('cors')
 const AuthorRoutes = require('./routes/author.routes')
+const AuthRoutes = require('./routes/auth.routes')
 
 const PORT = process.env.PORT || 4000
 
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
   res.send({ message: 'Api del curso de Vuejs desde Cero' })
 })
 
+app.use('/', AuthRoutes)
 app.use('/author', AuthorRoutes)
 
 app.listen(PORT, () => console.log(`> Ready on http://localhost:${PORT}`))

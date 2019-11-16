@@ -20,4 +20,5 @@ type User {
 type Query {
   allAuthors: [Author!]
   allBooks: [Book!]
+  findUserByEmail(email: String!): [User!]
 }
