@@ -4,7 +4,7 @@ const authorQueries = require('./author.queries')
 
 const secret = process.env.FAUNADB_SECRET_KEY
 
-const urlApi = process.env.FAUNADB_API
+const urlApi = 'https://graphql.fauna.com/graphql'
 
 const client = new request.GraphQLClient(urlApi, {
   headers: {
