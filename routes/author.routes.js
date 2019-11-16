@@ -1,11 +1,10 @@
 const { Router } = require('express')
+const { createAuthor, getAllAuthors, getAuthor, updateAuthor } = require('../controllers/author.controller')
 
 const router = Router()
 
-const getAllAuthors = (req, res, next) => {
-  res.status(200).json({ message: 'Hello From Routes' })
-}
+router.route('/').get(getAllAuthors).post(createAuthor)
 
-router.route('/').get(getAllAuthors)
+router.route('/:id').get(getAuthor).put(updateAuthor)
 
 module.exports = router
