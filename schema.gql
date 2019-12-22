@@ -1,14 +1,14 @@
 type Author {
   name: String!
   country: String!
-  books: [Book!] @realtion(name: "author_books")
+  books: [Book!] @relation
 }
 
 type Book {
   title: String!
   description: String!
   quantity: Int
-  author: Author! @relation(name: "author_books")
+  author: Author!
   price: Int
 }
 

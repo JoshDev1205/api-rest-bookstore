@@ -40,7 +40,7 @@ const updateAuthor = async (req, res) => {
     country
   }
 
-  const { updateAuthor } = await client.request(mutation, variables)
+  const { updateAuthor } = await client.request(authorQueries.updateAuthor, variables)
 
   res.status(200).json(updateAuthor)
 }

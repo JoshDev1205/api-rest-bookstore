@@ -18,8 +18,10 @@ const getAllAuthors = `{
       name
       country
       books {
-        _id
-        title
+        data {
+          _id
+          title
+        }
       }
     }
   }
@@ -45,8 +47,10 @@ const getAuthor = `
       name
       country
       books {
-        _id
-        title
+        data {
+            _id
+            title
+          }
       }
     }
   }

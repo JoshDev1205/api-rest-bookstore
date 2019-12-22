@@ -29,7 +29,7 @@ const signup = async (req, res) => {
     expiresIn: 60 * 60 * 24
   })
 
-  res.header('authorization', token).status(200).json(result)
+  res.status(200).json({ token })
 }
 
 const signin = async (req, res) => {
@@ -54,7 +54,7 @@ const signin = async (req, res) => {
 
   const token = jwt.sign({ _id: user._id }, config.secret || '')
 
-  res.header('authorization', token).status(200).json(user)
+  res.status(200).json({ token })
 }
 
 module.exports = {

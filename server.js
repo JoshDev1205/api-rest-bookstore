@@ -4,6 +4,7 @@ require('dotenv').config()
 const cors = require('cors')
 const AuthorRoutes = require('./routes/author.routes')
 const AuthRoutes = require('./routes/auth.routes')
+const BookRoutes = require('./routes/book.routes')
 
 const PORT = process.env.PORT || 4000
 
@@ -18,5 +19,6 @@ app.get('/', (req, res) => {
 
 app.use('/', AuthRoutes)
 app.use('/author', AuthorRoutes)
+app.use('/book', BookRoutes)
 
 app.listen(PORT, () => console.log(`> Ready on http://localhost:${PORT}`))
