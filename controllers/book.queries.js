@@ -51,6 +51,9 @@ const getBook = `
       description
       quantity
       price
+      author {
+        _id
+      }
     }
   }
 `
