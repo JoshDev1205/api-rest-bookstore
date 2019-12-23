@@ -48,7 +48,7 @@ const getBook = async (req, res) => {
 
 const updateBook = async (req, res) => {
   const { id } = req.params
-  const { title, description, quantity, authorId, price } = req.body
+  const { title, description, quantity, author: { _id: authorId }, price } = req.body
 
   const variables = {
     id,
